@@ -3,7 +3,7 @@ const getSearchedText = () => {
     const searchFieldInput = searchField.value;
     searchField.value = '';
     console.log(searchFieldInput);
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${searchFieldInput}&appid=09438cccc1dfc14c8ea6c1fc904b982f`
+    const url = `HTTPS://api.openweathermap.org/data/2.5/weather?q=${searchFieldInput}&appid=09438cccc1dfc14c8ea6c1fc904b982f`
     fetch(url)
     .then(res => res.json())
     .then(data => displayApi(data))
