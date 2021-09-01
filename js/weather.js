@@ -3,7 +3,7 @@ const getSearchedText = () => {
     const searchFieldInput = searchField.value;
     searchField.value = '';
     console.log(searchFieldInput);
-    const url = `HTTPS://api.openweathermap.org/data/2.5/weather?q=${searchFieldInput}&appid=09438cccc1dfc14c8ea6c1fc904b982f`
+    const url = `HTTPS://api.openweathermap.org/data/2.5/weather?q=${searchFieldInput}&units=metric&appid=09438cccc1dfc14c8ea6c1fc904b982f`
     document.getElementById('spinner').classList.remove("d-none")
     fetch(url)
     .then(res => res.json())
@@ -45,7 +45,7 @@ const displayApi = (info) => {
         const div = document.createElement('div');
         div.innerHTML = `
             <h1>Weather of ${info.name} city </h1>
-            <h3> Temperature ${info.main.temp - kelvin} </h3>
+            <h3> Temperature ${info.main.temp}°C</h3>
             <h3>${info.weather[0].main}</h3>
         `
         updateDiv.appendChild(div)
